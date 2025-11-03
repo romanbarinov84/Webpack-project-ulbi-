@@ -7,3 +7,12 @@ button{
     cursor: pointer;
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
 }
+button:hover{
+    background-color: rgb(217, 3, 3);
+}
+
+button:active{
+    background-color: rgb(249, 244, 244);
+    box-shadow: none;
+}
+

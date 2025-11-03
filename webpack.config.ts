@@ -24,21 +24,25 @@ export default (env:EnvVariables) => {
       filename: "[name][contenthash].js",
       clean: true,
     },
-    module: {
-    rules: [
-       {
-        test: /\.css$/i,
-        use: ["style-loader", "css-loader"],
-      },
-      {
-        test: /\.tsx?$/,
-        use: 'ts-loader',
-        exclude: /node_modules/,
-      },
-    ],
-  },
+   module: {
+  rules: [
+    {
+      test: /\.tsx?$/,
+      use: "ts-loader",
+      exclude: /node_modules/,
+    },
+    {
+      test: /\.s[ac]ss$/i,
+      use: [
+        "style-loader",
+        "css-loader",
+        "sass-loader",
+      ],
+    },
+  ],
+},
   resolve: {
-    extensions: ['.tsx', '.ts', '.js'],
+    extensions: [".ts", ".tsx", ".js", ".jsx"],
   },
   devtool: isDev && 'inline-source-map',
  devServer: isDev ? {
