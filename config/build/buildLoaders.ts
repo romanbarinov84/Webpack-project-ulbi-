@@ -8,7 +8,6 @@ function buildLoaders(options: BuildOptions): ModuleOptions["rules"] {
   const mode: Mode = options.mode ?? "development";
   const isDev = mode === "development";
 
-  // --- SCSS Modules ---
   const scssModulesLoaders = {
     test: /\.module\.s[ac]ss$/i,
     use: [
@@ -17,9 +16,7 @@ function buildLoaders(options: BuildOptions): ModuleOptions["rules"] {
         loader: "css-loader",
         options: {
           modules: {
-            localIdentName: isDev
-              ? "[path][name]__[local]"
-              : "[hash:base64:8]",
+            localIdentName: isDev ? "[path][name]__[local]" : "[hash:base64:8]",
           },
         },
       },
