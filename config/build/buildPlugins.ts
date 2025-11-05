@@ -1,7 +1,6 @@
 import HtmlWebpackPlugin from "html-webpack-plugin";
 import MiniCssExtractPlugin, { Configuration } from "mini-css-extract-plugin";
-import path from "path";
-import webpack, { ProgressPlugin } from "webpack";
+import { ProgressPlugin } from "webpack";
 
 import { BuildOptions } from "./types/types";
 

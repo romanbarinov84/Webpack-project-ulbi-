@@ -8,12 +8,7 @@
     "allowJs": true,
     "moduleResolution": "Node16",
     "allowSyntheticDefaultImports": true,
-    "esModuleInterop": true,
-    
+    "esModuleInterop": true
   },
-  "ts-node": {
-    "compilerOptions": {
-      "module": "CommonJS"
-    }
-  }
+  "include": ["src", "src/global.d.ts"]
 }
