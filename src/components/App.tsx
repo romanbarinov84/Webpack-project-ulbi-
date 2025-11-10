@@ -1,6 +1,8 @@
 import { useState } from "react";
 import * as classes from "./App.module.scss";
 import { Link, Outlet } from "react-router-dom";
+import avatar from "@/assets/dsc_0746-600x400.jpg"
+import Cart from "@/assets/cart.svg"
 
 function App() {
   const [count, setCount] = useState<number>(0);
@@ -11,6 +13,13 @@ function App() {
 
   return (
     <div>
+      <div>
+        <img width={300} height={150} src={avatar} alt="avatar" />
+        
+      </div>
+      <div>
+        <Cart/>
+      </div>
       <Link to="/about">About</Link>
       <br />
       <Link to="/shop">Shop</Link>

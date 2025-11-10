@@ -2,11 +2,34 @@ import MiniCssExtractPlugin from "mini-css-extract-plugin";
 import { ModuleOptions } from "webpack";
 import { BuildOptions } from "./types/types";
 
+
 type Mode = "development" | "production" | "none";
 
 function buildLoaders(options: BuildOptions): ModuleOptions["rules"] {
   const mode: Mode = options.mode ?? "development";
   const isDev = mode === "development";
+
+  const assetLoader = {
+        test: /\.(woff|woff2|eot|ttf|otf)$/i,
+        type: 'asset/resource',
+      }
+
+  const assetLoaderImages = {
+        test: /\.(png|jpg|jpeg|gif)$/i,
+        type: 'asset/resource',
+      }    
+  
+  const svgrLoader = {
+  test: /\.svg$/,
+  use: [
+    {
+      loader:"@svgr/webpack",
+      options: {
+        icon:true
+      }
+    }
+  ],
+}    
 
   const scssModulesLoaders = {
     test: /\.module\.s[ac]ss$/i,
@@ -42,7 +65,7 @@ function buildLoaders(options: BuildOptions): ModuleOptions["rules"] {
     exclude: /node_modules/,
   };
 
-  return [scssModulesLoaders, scssLoaders, tsLoaders];
+  return [assetLoader,assetLoaderImages,svgrLoader , scssModulesLoaders, scssLoaders, tsLoaders];
 }
 
 export default buildLoaders;

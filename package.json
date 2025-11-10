@@ -19,6 +19,7 @@
     "start": "webpack serve "
   },
   "devDependencies": {
+    "@svgr/webpack": "^8.1.0",
     "@types/node": "^24.10.0",
     "@types/react": "^18.3.26",
     "@types/react-dom": "^18.3.7",
