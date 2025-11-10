@@ -8,6 +8,7 @@ function buildDevServer(options:BuildOptions): DevServerConfiguration {
             open: true,
             hot: true,
             historyApiFallback:true,
+             
           } 
    
   

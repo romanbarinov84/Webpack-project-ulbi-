@@ -4,6 +4,10 @@ import { DefinePlugin, ProgressPlugin } from "webpack";
 const BundleAnalyzerPlugin =
   require("webpack-bundle-analyzer").BundleAnalyzerPlugin;
 import { BuildOptions } from "./types/types";
+import ReactRefreshWebpackPlugin from '@pmmmwh/react-refresh-webpack-plugin';
+
+
+const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
 
 export type Mode = "development" | "production" | "none";
 
@@ -17,11 +21,13 @@ function buildPlugins({ mode, paths ,analyzer,platform}: BuildOptions): Configur
     }),
     new DefinePlugin({
       __PLATFORM__ : JSON.stringify(platform),
-    })
+    }),
+    new ForkTsCheckerWebpackPlugin()
   ];
 
   if (isDev) {
     plugins.push(new ProgressPlugin());
+    plugins.push(new ReactRefreshWebpackPlugin());
   }
 
   if (isProd) {
