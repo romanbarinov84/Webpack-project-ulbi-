@@ -13,3 +13,5 @@ declare module '*.png';
 declare module '*.svg';
 declare module '*.gif';
 declare module '*.webp';
+
+declare const __PLATFORM__ : "mobile" | "desktop";

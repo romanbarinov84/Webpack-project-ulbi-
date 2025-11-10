@@ -16,7 +16,9 @@
   "scripts": {
     "build:dev": "webpack --env mode=development",
     "build:prod": "webpack --env mode=production",
-    "start": "webpack serve "
+    "start": "webpack serve ",
+    "build:mobile" : "webpack --env mode=production --env platform=mobile",
+    "build:desktop": "webpack --env mode=production --env platform=desktop"
   },
   "devDependencies": {
     "@svgr/webpack": "^8.1.0",

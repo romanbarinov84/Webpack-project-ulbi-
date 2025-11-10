@@ -11,8 +11,17 @@ function App() {
     setCount(count + 1);
   };
 
+  if(__PLATFORM__ === "desktop"){
+    return <div>isDesktopPlatform</div>
+  }
+  if(__PLATFORM__ === "mobile"){
+    return <div>isMobilePlatform</div>
+  }
+
   return (
     <div>
+      <h1>PLATFORM={__PLATFORM__}</h1>
+      
       <div>
         <img width={300} height={150} src={avatar} alt="avatar" />
         
