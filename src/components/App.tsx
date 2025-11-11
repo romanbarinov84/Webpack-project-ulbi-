@@ -13,8 +13,8 @@ function App() {
 
 
   return (
-    <div>
-      <h1>PLATFORM={__PLATFORM__}</h1>
+    <div data-testid={"App"}>
+      <h1 data-testid={"Platform"}>PLATFORM={__PLATFORM__}</h1>
       
       <div>
         <img width={300} height={150} src={avatar} alt="avatar" />

@@ -2,6 +2,7 @@ import MiniCssExtractPlugin from "mini-css-extract-plugin";
 import { ModuleOptions } from "webpack";
 import { BuildOptions } from "./types/types";
 import  ReactRefreshTypeScript  from "react-refresh-typescript";
+import buildBabelLoader from "./babel/buildBabelLoader";
 
 
 type Mode = "development" | "production" | "none";
@@ -76,7 +77,10 @@ function buildLoaders(options: BuildOptions): ModuleOptions["rules"] {
         ]
       }
 
-  return [assetLoader,assetLoaderImages,svgrLoader , scssModulesLoaders, scssLoaders, tsLoaders];
+
+      const babelLoader = buildBabelLoader(options)
+
+  return [assetLoader,assetLoaderImages,svgrLoader , scssModulesLoaders, scssLoaders, babelLoader];
 }
 
 export default buildLoaders;

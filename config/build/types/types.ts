@@ -15,4 +15,5 @@ export interface BuildOptions {
   paths: BuildPaths;
   platform:BuildPlatform;
   analyzer?: boolean;
+  isDev?: boolean;
 }
